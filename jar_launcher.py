@@ -2,6 +2,11 @@ import os
 import subprocess
 import ctypes
 
+def hide_console():
+    hwnd = ctypes.windll.kernel32.GetConsoleWindow()
+    if hwnd:
+        ctypes.windll.user32.ShowWindow(hwnd, 0)
+
 def show_console():
     hwnd = ctypes.windll.kernel32.GetConsoleWindow()
     if hwnd:
@@ -32,6 +37,7 @@ def main(options):
     
     if choice.lower() == 'q':
         print("Saliendo...")
+        hide_console()
         return
 
     # Verifica si la elección es válida

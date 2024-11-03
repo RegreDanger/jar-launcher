@@ -19,6 +19,7 @@ def is_running():
 
 def save_process_id():
     process_id = os.getpid()
+    subprocess.run(['attrib', '-h', 'process_id.txt'], check=True)
     with open("process_id.txt", "w") as pid_file:
         pid_file.write(str(process_id))
     

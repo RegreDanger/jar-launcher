@@ -1,0 +1,11 @@
+#log
+*.log
+
+#temps
+*.tmp
+
+#cache
+__pycache__/
+
+#process_id
+process_id.txt
