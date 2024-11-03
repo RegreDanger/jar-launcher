@@ -47,6 +47,7 @@ def main(options):
             selected_jar = options[choice_index]
             print(f"Ejecutando {selected_jar}...")
             subprocess.run(["java", "-jar", selected_jar])
+            hide_console()
         else:
             print("Selección inválida.")
     except ValueError:
